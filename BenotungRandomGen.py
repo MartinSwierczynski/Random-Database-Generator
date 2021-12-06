@@ -1,5 +1,6 @@
 import csv
 import random
+import datetime
 from names_generator import generate_name
 
 # Giving random pupils from random teachers_subject_joins a random grade
@@ -41,7 +42,7 @@ with open('faecher_lehrer_joined.csv',newline='') as faecher_lehrer_file:
 				fach_lehrer = random.randrange(0,len(faecher_lehrerListe))
 
 				# random generate the time between your desired timestamps (min,max)
-				randUnixTime = random.randrange(minDate.timestamp(),maxDate.timestamp())
+				randUnixTime = random.randrange(int(minDate.timestamp()),int(maxDate.timestamp()))
 				# convert the unix time to a datetime
 				date = datetime.datetime.fromtimestamp(randUnixTime)
 				# convert the datetime to a American formated string
