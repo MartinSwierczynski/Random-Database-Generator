@@ -2,7 +2,7 @@ import csv
 import random
 from names_generator import generate_name
 
-dataRows = 305
+dataRows = 30
 genders = ["w","m"]
 
 # adds a zero if the number is below 10

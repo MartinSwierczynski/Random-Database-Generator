@@ -3,7 +3,7 @@ import random
 import datetime
 from names_generator import generate_name
 
-dataRows = 53297
+dataRows = 1100
 genders = ["w","m"]
 
 def getFullNum(num):
