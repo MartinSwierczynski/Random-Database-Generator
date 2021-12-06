@@ -44,3 +44,4 @@ with open('Lehrer_randomDatabase.csv',newline='') as lehrerfile:
 					# save the lehrer with its fach
 					#print([lehrerListe[row_num],faecherListe[fach]])
 					lehrer_facher.writerow([lehrerListe[row_num],faecherListe[fach]])
+

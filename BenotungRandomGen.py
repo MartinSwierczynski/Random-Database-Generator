@@ -2,10 +2,12 @@ import csv
 import random
 from names_generator import generate_name
 
-# Giving random pupils from random teachers_subject_joins a random 
+# Giving random pupils from random teachers_subject_joins a random grade
 
 BenotungsAnzahl = 24569
 
+minDate = datetime.datetime(2020,1,1)
+maxDate = datetime.datetime.now()
 
 def getFullNum(num):
 	numS = str(num)
@@ -38,7 +40,13 @@ with open('faecher_lehrer_joined.csv',newline='') as faecher_lehrer_file:
 				# use the number to get the primary key
 				fach_lehrer = random.randrange(0,len(faecher_lehrerListe))
 
-				date = str(random.randrange(2020,2022))+"-"+getFullNum(random.randrange(1,13))+"-"+getFullNum(random.randrange(1,29))
+				# random generate the time between your desired timestamps (min,max)
+				randUnixTime = random.randrange(minDate.timestamp(),maxDate.timestamp())
+				# convert the unix time to a datetime
+				date = datetime.datetime.fromtimestamp(randUnixTime)
+				# convert the datetime to a American formated string
+				dateStr = str(date.year)+"-"+getFullNum(date.month)+"-"+getFullNum(date.day)
+
 
 				note = random.randrange(1,7)
 
@@ -46,7 +54,7 @@ with open('faecher_lehrer_joined.csv',newline='') as faecher_lehrer_file:
 										faecher_lehrerListe[fach_lehrer][0],
 										faecher_lehrerListe[fach_lehrer][1],
 										note,
-										date])
+										dateStr])
 
 
 

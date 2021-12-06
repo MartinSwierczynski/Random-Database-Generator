@@ -12,6 +12,7 @@ def getFullNum(num):
 		return "0"+numS
 	return numS
 
+
 with open("Klassen.csv",newline="") as klassfile:
 	# import all classes
 	klassen = csv.reader(klassfile)
@@ -26,11 +27,8 @@ with open("Klassen.csv",newline="") as klassfile:
 		for row in range(dataRows):
 			name = generate_name(style='capital')
 			name = name.split()
-			
-			date = str(random.randrange(1960,2005))+"-"+getFullNum(random.randrange(1,13))+"-"+getFullNum(random.randrange(1,29))
 
-			gender = genders[random.randrange(0,2)]
-
+			# assign all the classes till there are none
 			if row < len(klassenListe):
 				currentClass = klassenListe[row]
 			else:
